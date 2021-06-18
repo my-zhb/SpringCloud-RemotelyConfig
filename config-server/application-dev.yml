@@ -17,6 +17,12 @@ eureka:
 spring:
   application:
     name: springcloud-service-protal
+  # 配置rabbitmq
+  rabbitmq:
+    host: 111.231.207.228
+    port: 5672
+    username: myiszhb
+    password: 2020Fate!
 
 hystrix:
   command:
