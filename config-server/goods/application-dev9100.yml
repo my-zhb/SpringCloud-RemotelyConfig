@@ -9,6 +9,12 @@ spring:
     password: asdgfwgewer341231
   application:
     name: springcloud-service-goods
+  # 配置rabbitmq
+  rabbitmq:
+    host: 111.231.207.228
+    port: 5672
+    username: myiszhb
+    password: 2020Fate!
 eureka:
   instance:
     #每间隔2s，向服务端发送一次心跳，证明自己存活
