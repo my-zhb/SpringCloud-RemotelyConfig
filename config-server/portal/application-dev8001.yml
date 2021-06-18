@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 8001
 eureka:
   instance:
     #每间隔2s，向服务端发送一次心跳，证明自己存活
@@ -9,7 +9,7 @@ eureka:
     #告诉服务端，服务实例以ip作为链接，而不是机器名
     prefer-ip-address: true
     #告诉服务端，服务实例的名称
-    instance-id: springcloud-service-protal-01
+    instance-id: springcloud-service-protal-02
   client:
     service-url:
       #指定服务注册中心的位置
@@ -17,6 +17,12 @@ eureka:
 spring:
   application:
     name: springcloud-service-protal
+  # 配置rabbitmq
+  rabbitmq:
+    host: 111.231.207.228
+    port: 5672
+    username: myiszhb
+    password: 2020Fate!
 
 hystrix:
   command:
@@ -39,8 +45,17 @@ feign:
     enabled: true
 
 # 暴露端点
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: hystrix.stream
 management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: '*'
+
+# 测试局部动态刷新
+info:
+  address: myiszhb
