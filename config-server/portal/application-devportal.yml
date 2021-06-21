@@ -58,4 +58,4 @@ management:
 
 # 测试局部动态刷新
 info:
-  address: myiszhb2
+  address: wocao
